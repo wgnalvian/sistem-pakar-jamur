@@ -47,7 +47,7 @@ class AlternativeController extends Controller
         }
         arsort($results);
         $desease = Desease::find(array_key_first($results));
-        
+       
         return view('alternative.index', ['title' => 'Hasil Perhitungan', 'desease' => $desease, 'result' => $results[array_key_first($results)],'symtoms' => UserSymtom::where('users_id', $user->id)->get()]);
     }
 
@@ -112,7 +112,7 @@ class AlternativeController extends Controller
     {
         $conditions = Condition::all();
         $title = "Pilih Kondisi";
-        return view('alternative.addIsharvest', ['conditions' => $conditions, 'title' => $title]);
+        return view('alternative.addIsHarvest', ['conditions' => $conditions, 'title' => $title]);
     }
 
     public function addIsHarvest(Request $request)
